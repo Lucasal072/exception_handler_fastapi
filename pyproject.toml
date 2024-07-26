@@ -1,0 +1,30 @@
+[project]
+name = "i18n_fastapi_helper"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "lucas alves", email = "lucasal072@gmail.com"},]
+dependencies = []
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=8.2.0",
+    "pytest-mock>=3.14.0",
+    "pytest-watch>=4.2.0",]
+dev = [
+    "pre-commit>=3.7.0",
+    "fastapi>=0.111.0",]
+lint = [
+    "ruff>=0.4.3",
+    "isort>=5.13.2",]
+
+
+[tool.pdm.scripts]
+test = "ptw tests"

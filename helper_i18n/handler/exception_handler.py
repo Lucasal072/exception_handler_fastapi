@@ -14,7 +14,7 @@ class ExceptionHandler:
     def __init__(self, i18n_handler: I18nHandler) -> None:
         self.i18n = i18n_handler
 
-    def include_app(self, app: Starlette):
+    def include_app(self, app: Starlette) -> None:
         app.add_exception_handler(
             RequestValidationError, self.__include_pydantic_exception
         )
@@ -44,7 +44,7 @@ class ExceptionHandler:
     ) -> JSONResponse:
         exception = cast(CustomException, exception)
         return self.__create_response(
-            exception.i8n_key,
+            exception.i18n_key,
             request,
             exception.status_code,
             exception.errors,

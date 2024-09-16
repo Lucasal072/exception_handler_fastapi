@@ -22,7 +22,7 @@ jobs:
           pdm mypy
 
       - name: Create stubfiles
-        run: pdm run stubgen src/
+        run: pdm run stubgen helper_i18n/
 
       - name: Build with PDM
         run: pdm build
